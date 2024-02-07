@@ -5,6 +5,12 @@ html {
     overflow-x: hidden;
 }
 
+.text {
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .landingContainer {
     position: relative;
 }
@@ -20,6 +26,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-size: 8em;
 }
 
 .buttonContainer {
