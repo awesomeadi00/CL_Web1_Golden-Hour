@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault(); // Prevent default anchor behavior
 
-            const targetId = this.getAttribute('href'); // Get the target ID from the href attribute
+            const targetId = this.getAttribute('href'); // Get the target class from the href attribute
             const targetElement = document.querySelector(targetId); // Find the target element
 
             if (targetElement) {
