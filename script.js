@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorFollower.style.top = `${e.clientY}px`;
     }
 
+    // Checks for each hyperlink whether the mouse cursor has entered it's area. 
     document.querySelectorAll('a').forEach(link => {
+        // When the mouse enters the <a>, it executes the following on the cursor
         link.addEventListener('mouseenter', () => {
             cursorFollower.style.opacity = '1';         // Make it visible
             cursorFollower.style.width = `${size}px`;   // Grow to final size
@@ -67,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorFollower.style.transform = `translate(-50%, -50%) scale(1)`; // Scale up smoothly
             document.addEventListener('mousemove', moveCursorFollower);
         });
-
+        
+        // When the mouse leaves the <a>, it executes the following on the cursor
         link.addEventListener('mouseleave', () => {
             cursorFollower.style.opacity = '0';     // Fade out
             cursorFollower.style.width = `0`;       // Shrink back
@@ -82,20 +85,22 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault(); // Prevent default anchor behavior
 
-            const targetId = this.getAttribute('href'); // Get the target class from the href attribute
-            const targetElement = document.querySelector(targetId); // Find the target element
+            // Get the target class from the href attribute and finds the target element
+            const targetClass = this.getAttribute('href'); 
+            const targetElement = document.querySelector(targetClass); 
 
             if (targetElement) {
+                // Smooth scroll and to the start of the element
                 targetElement.scrollIntoView({
-                    behavior: 'smooth', // Smooth scroll
-                    block: 'start' // Scroll to the start of the target element
+                    behavior: 'smooth', 
+                    block: 'start' 
                 });
             }
         });
     });
 });
 
-// Calculate initial positions based on a scroll position of 0
+// Calculate initial positions based on a scroll position of 0 when the webpage loads
 // Set initial current position to match target
 calculateTargetPositions(0); 
 currentLeft = targetLeft; 
