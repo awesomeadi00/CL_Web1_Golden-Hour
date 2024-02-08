@@ -2,12 +2,26 @@ body,
 html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: rgba(181, 180, 179, 0.5);
+    mix-blend-mode: multiply;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
 }
 
 .text {
-    font-family: "Single Day", cursive;
-    font-weight: 400;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
     font-style: normal;
 }
 
@@ -17,31 +31,45 @@ html {
     height: 100%;
 }
 
-#mainTitle,
-.buttonContainer {
-    position: absolute;
+#name {
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    left: 30px;
     z-index: 4;
-}
-
-#mainTitle {
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: none;
     color: white;
-    font-size: 8em;
+    font-size: 2em;
 }
 
-.buttonContainer {
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.navContainer {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 4;
+    transform: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.buttonContainer a {
+.navContainer a {
+    text-align: center;
+    font-size: 1.2em;
     color: white;
     text-decoration: none;
     margin: 0 10px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
+
+.navContainer a:hover {
+    color: #FFD700;
+}
+
 
 #goldenVideo {
     top: 0;
@@ -51,14 +79,14 @@ html {
     z-index: 1;
 }
 
-#hills {
+/* #hills {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 3;
-}
+} */
 
 #sun {
     position: fixed;
@@ -71,14 +99,53 @@ html {
     transform: translateY(-50%);
     transition: all 0.5s ease;
     z-index: 2;
-    box-shadow: 0 0 50px 35px orange;
+    box-shadow: 0 0 30px 20px rgb(255, 208, 0);
 }
 
-#river {
+/* #river {
     position: absolute;
     top: 38%;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 3;
+} */
+
+#mainTitle {
+    margin: 0px;
+    padding: 5px;
+    width: 1000px;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 8em;
+    z-index: 4;
+    text-align: center;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#watchFilmBtn{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-15%);
+    z-index: 4;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-weight: 500;
+}
+
+#watchFilBtn:hover {
+    color: #FFD700;
 }
