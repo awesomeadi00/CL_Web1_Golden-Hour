@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -87,12 +90,41 @@
 
         <!-- This is the gallery section of the website -->
         <div class="imageContainer">
-            <h2>Gallery</h2>
+            <h2 id="galleryTitle" class="text">Gallery</h2>
+            
+            <!-- Dynamic Swiping Gallery using Swiper Link -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" style="margin-bottom: 20px;">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="Images/favicon.png" alt="Image 1">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 1</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="Images/favicon.png" alt="Image 2">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 2</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="Images/favicon.png" alt="Image 3">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 3</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="Images/favicon.png" alt="Image 4">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 4</p>
+                    </div>
+                </div>
+
+                <!--  Pagination -->
+                <div class="swiper-pagination" style="z-index: 5;"></div>
+                <div class="swiper-button-prev" style="z-index: 5;"></div>
+                <div class="swiper-button-next" style="z-index: 5;"></div>
+            </div>
         </div>
+
 
         <!-- This is the contact me section of the website -->
         <div class="contactContainer">
-            <h2>Contact Me:</h2>
+            <h2 id="contactTitle" class="text">Contact Me</h2>
             <a href="">Instagram</a>
             <a href="">LinkedIn</a>
             <a href="">Email</a>

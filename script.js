@@ -117,6 +117,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// This feature is from the Swiping Library for Image Swiping Gallery
+var mySwiper = new Swiper('.mySwiper', {
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // Enable swiping with mouse and touch
+    simulateTouch: true,
+    touchRatio: 1,
+    grabCursor: true,
+    slideToClickedSlide: true,
+
+    // Speed of the transition between slides
+    speed: 400,
+});
+
 // Calculate initial positions based on a scroll position of 0 when the webpage loads
 // Set initial current position to match target
 calculateTargetPositions(0); 
