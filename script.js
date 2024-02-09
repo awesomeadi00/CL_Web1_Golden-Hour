@@ -35,15 +35,17 @@ function calculateTargetPositions(scrollPos) {
     targetLeft += adjustedWidth;
 
     // This adjusts the height of the sun based on the formula of a quadratic curve
-    var peak = 0.5;
+    var peak = 0.4;
     var verticalPosition = 4 * peak * (progress - progress * progress);
     targetTop = (windowHeight / 2) - (verticalPosition * windowHeight);
 }
+
 // Listener event which gets the scroll position when the user scrolls
 document.addEventListener("scroll", function () {
     var scrollPosition = window.scrollY;
     calculateTargetPositions(scrollPosition);
 });
+
 
 // This function is called when the webpage loads: 
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,23 +82,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // This is for smooth scrolling when clicked on a hyperlink or button
+    //This is to ensure there is smooth scrolling when clicked on a hyperlink from the nav Container or the watch film button. 
     document.querySelectorAll('.navContainer a, .buttonContainer a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default anchor behavior
+            e.preventDefault(); 
 
             // Get the target class from the href attribute and finds the target element
-            const targetClass = this.getAttribute('href'); 
-            const targetElement = document.querySelector(targetClass); 
+            const targetClass = this.getAttribute('href');
+            const targetElement = document.querySelector(targetClass);
 
             if (targetElement) {
-                // Smooth scroll and to the start of the element
-                targetElement.scrollIntoView({
-                    behavior: 'smooth', 
-                    block: 'start' 
+                // Get the height of the navContainer and adjusts an offset position so that it scrolls to that point. 
+                const navHeight = document.querySelector('.navContainer').offsetHeight; 
+                const elementPosition = targetElement.getBoundingClientRect().top; 
+                const offsetPosition = elementPosition + window.scrollY - navHeight; 
+
+                // Smooth scroll to the element with offset
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
+    });
+
+    // This is for when the user scrolls, the nav container adds the scrolled CSS properties, else we remove it. 
+    const navContainer = document.querySelector('.navContainer');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) { // Adjust this value based on your needs
+            navContainer.classList.add('navContainer-scrolled');
+        } else {
+            navContainer.classList.remove('navContainer-scrolled');
+        }
     });
 });
 

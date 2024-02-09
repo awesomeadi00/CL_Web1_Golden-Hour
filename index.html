@@ -19,24 +19,24 @@
     <div id="sun"></div>
 
     <div class="mainContent">
+
+        <!-- This is the landing page section of the website -->
         <div class="homeContainer">
             <video autoplay muted loop id="goldenVideo">
                 <source src="Video/LandingPage_Video.mp4" type="video/mp4">
             </video>
-            <!-- <img src="Images/Hills.png" id="hills"> -->
             
-            <div class="nameContainer">
+            <div class="navContainer">
                 <h2 class="text" id="name">Aditya Pandhare</h2>
+                <div class="navLinks">
+                    <a href=".homeContainer" class="text">Home</a>
+                    <a href=".aboutContainer" class="text">About</a>
+                    <a href=".videoContainer" class="text">Film</a>
+                    <a href=".imageContainer" class="text">Gallery</a>
+                    <a href=".contactContainer" class="text">Contact</a>
+                </div>
             </div>
 
-            <div class="navContainer">
-                <a href=".homeContainer" class="text">Home</a>
-                <a href=".aboutContainer" class="text">About</a>
-                <a href=".videoContainer" class="text">Film</a>
-                <a href=".imageContainer" class="text">Gallery</a>
-                <a href=".contactContainer" class="text">Contact</a>
-            </div>
-            
             <h1 class="text" id="mainTitle">Golden Hour</h1>
             
             <div class="buttonContainer">
@@ -44,18 +44,15 @@
                     <button class="text" id="watchFilmBtn">Watch Film</button>
                 </a>
             </div>
-
-            <!-- <video autoplay muted loop id="river">
-                <source src="Video/River.mp4" type="video/mp4">
-            </video> -->
         </div>
 
-
+        <!-- This is the about section of the website -->
         <div class="aboutContainer">
             <h2>About</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
         </div>
 
+        <!-- This is the video section of the website -->
         <div class="videoContainer">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/e7PVWiWZWJs?si=c_NdPcGvBIauiRku"
             title="YouTube video player" frameborder="0"
@@ -63,10 +60,12 @@
             allowfullscreen></iframe>
         </div>
 
+        <!-- This is the gallery section of the website -->
         <div class="imageContainer">
             <h2>Gallery</h2>
         </div>
 
+        <!-- This is the contact me section of the website -->
         <div class="contactContainer">
             <h2>Contact Me:</h2>
             <a href="">Instagram</a>
@@ -74,7 +73,7 @@
             <a href="">Email</a>
         </div>
 
-        <div style="height: 2000px;"></div>
+        <!-- <div style="height: 2000px;"></div> -->
     </div>
 
     <script src="script.js"></script>
