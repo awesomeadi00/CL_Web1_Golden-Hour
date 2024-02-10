@@ -1,3 +1,36 @@
+// The bottom functions rely on EmailJS which is based on the contact form at the bottom of the page.
+// This sends the message directly to my email. 
+(function () {
+    emailjs.init("dnwwMaWGKcUf7wW_O");
+})();
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var sendButton = document.getElementById('sendButton');
+    sendButton.innerText = 'Sending...'; 
+    sendButton.disabled = true; 
+
+    // Using EmailJS third party service for email inquiries
+    emailjs.sendForm('service_7m33gai', 'template_r9m84un', this)
+        .then(function () {
+            console.log('SUCCESS!');
+            sendButton.innerText = 'Sent!';
+            sendButton.style.backgroundColor = '#C04000'; 
+
+        }, function (error) {
+            console.log('FAILED...', error);
+            alert('Failed to send the message, try again.');
+
+            // Reset button
+            sendButton.innerText = 'Send';
+            sendButton.disabled = false; 
+            sendButton.style.backgroundColor = ''; 
+        });
+});
+
+
+// Global variables for the sun html element
 let sun = document.getElementById("sun");
 let targetLeft = 0;
 let targetTop = 0;
@@ -116,24 +149,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // The next section of code is all about generating 40 circles throughout the webpage
+    // This section of the code is to evenly distribute some circular design balls throughout the website. 
     var mainContent = document.querySelector('.mainContent');
+    var rows = 8; 
+    var cols = 6; 
 
-    for (var i = 0; i < 40; i++) { // Adjust the number of balls you want
+    // Segments the mainContent of the webpage into rows and columns for an even distribution. 
+    var cellWidth = mainContent.offsetWidth / cols;
+    var cellHeight = mainContent.offsetHeight / rows;
+
+    // For each cell within this grid, we'd spawn a blurry ball
+    for (var i = 0; i < rows * cols; i++) {
         var ball = document.createElement('div');
         ball.className = 'blurry-ball';
-        
-        // Randomize positions
-        ball.style.top = Math.random() * 100 + '%';
-        ball.style.left = Math.random() * 100 + '%';
-        
-        // Randomize sizes
-        var ballSize = Math.floor(Math.random() * (120 - 20 + 1)) + 20; // Random size between 20px and 120px
+
+        // Calculate cell position
+        var col = i % cols;
+        var row = Math.floor(i / cols);
+
+        // Calculate random position within the cell
+        var left = col * cellWidth + (Math.random() * cellWidth);
+        var top = row * cellHeight + (Math.random() * cellHeight);
+
+        // Random size between 20px and 120px
+        var ballSize = Math.floor(Math.random() * (120 - 20 + 1)) + 20; 
         ball.style.width = ballSize + 'px';
         ball.style.height = ballSize + 'px';
 
+        ball.style.position = 'absolute';
+        ball.style.left = `${left}px`;
+        ball.style.top = `${top}px`;
+
         mainContent.appendChild(ball);
     }
+
 });
 
 // This feature is from the Swiping Library for Image Swiping Gallery
