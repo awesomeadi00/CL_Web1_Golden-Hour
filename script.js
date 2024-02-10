@@ -115,6 +115,25 @@ document.addEventListener('DOMContentLoaded', () => {
             navContainer.classList.remove('navContainer-scrolled');
         }
     });
+
+    // The next section of code is all about generating 40 circles throughout the webpage
+    var mainContent = document.querySelector('.mainContent');
+
+    for (var i = 0; i < 40; i++) { // Adjust the number of balls you want
+        var ball = document.createElement('div');
+        ball.className = 'blurry-ball';
+        
+        // Randomize positions
+        ball.style.top = Math.random() * 100 + '%';
+        ball.style.left = Math.random() * 100 + '%';
+        
+        // Randomize sizes
+        var ballSize = Math.floor(Math.random() * (120 - 20 + 1)) + 20; // Random size between 20px and 120px
+        ball.style.width = ballSize + 'px';
+        ball.style.height = ballSize + 'px';
+
+        mainContent.appendChild(ball);
+    }
 });
 
 // This feature is from the Swiping Library for Image Swiping Gallery
