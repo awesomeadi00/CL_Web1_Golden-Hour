@@ -3,7 +3,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background-color: #f1e8c0;
+    background: linear-gradient(to bottom, #f1e8c0 0%, #d1a566 100%);
 }
 
 .cursor-follower {
@@ -113,7 +113,7 @@ html {
     transform: translate(-50%, -50%);
     color: white;
     font-size: 8em;
-    z-index: 4;
+    z-index: 3;
 }
 
 .buttonContainer {
@@ -126,7 +126,7 @@ html {
     top: 45%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 4;
+    z-index: 3;
     background-color: white;
     border: none;
     border-radius: 20px;
@@ -154,7 +154,7 @@ html {
     text-align: center;
     left: 50%;
     font-size: 2em;
-    z-index: 5;
+    z-index: 3;
 }
 
 .aboutSection {
@@ -168,7 +168,7 @@ html {
 .aboutDescription {
     flex-basis: 50%;
     padding-right: 5px;
-    z-index: 5;
+    z-index: 3;
 }
 
 .aboutDescription li {
@@ -192,14 +192,13 @@ html {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    z-index: 5;
 }
 
 #videoTitle {
     margin: 20px;
     font-size: 2em;
     text-align: center;
-    z-index: 5;
+    z-index: 3;
 }
 
 .videoContainer iframe {
@@ -213,18 +212,20 @@ html {
     margin-bottom: 75px;
 }
 
+.imageContainer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
 /* Gallery Section CSS Properties */
 #galleryTitle {
     margin: 20px;
     font-size: 2em;
     text-align: center;
-    z-index: 5;
-}
-
-.imageContainer {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
 }
 
 .swiper-slide img {
@@ -233,5 +234,76 @@ html {
     object-fit: contain;
     margin: auto;
     display: block;
-    z-index: 5;
+    border-radius: 20px;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    color: rgb(192, 66, 3) !important;
+    z-index: 6 !important;
+}
+
+.mySwiper .swiper-pagination-bullet {
+    background-color: rgb(192, 66, 3) !important;
+}
+
+/* Contact Section CSS Properties */
+.contactContainer {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFF9F0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#contactTitle {
+    margin: 20px;
+    font-size: 2em;
+    text-align: center;
+    z-index: 3;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.formGroup textarea {
+    resize: vertical;
+}
+
+#sendButton {
+    display: block;
+    width: 100%;
+    background-color: #DAA520;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#sendButton:hover {
+    background-color: #C9961E;
 }

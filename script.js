@@ -35,7 +35,7 @@ function calculateTargetPositions(scrollPos) {
     targetLeft += adjustedWidth;
 
     // This adjusts the height of the sun based on the formula of a quadratic curve
-    var peak = 0.4;
+    var peak = 0.3;
     var verticalPosition = 4 * peak * (progress - progress * progress);
     targetTop = (windowHeight / 2) - (verticalPosition * windowHeight);
 }

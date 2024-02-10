@@ -8,13 +8,13 @@
     <title>Golden Hour</title>
 
     <!-- Links:  -->
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1f1a295127.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -97,20 +97,34 @@
                 <div class="swiper-wrapper" style="margin-bottom: 20px;">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img src="Images/favicon.png" alt="Image 1">
-                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 1</p>
+                        <img src="Images/Image_1.png" alt="Image 1">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">
+                            This was the first stop on my walk. I love the way the light reflected off the water, personally it's so soothing. 
+                        </p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/favicon.png" alt="Image 2">
-                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 2</p>
+                        <img src="Images/Image_2.png" alt="Image 2">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">
+                            The highline is a top tier places to walk during golden hour. Loved the way the sun glowed all over our campus :D
+                        </p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/favicon.png" alt="Image 3">
-                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 3</p>
+                        <img src="Images/Image_3.png" alt="Image 3">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">
+                            The grass area above D1 is another prime spot. The sun shines perfectly and you get to see all the cute dogs.
+                        </p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/favicon.png" alt="Image 4">
-                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">Caption 4</p>
+                        <img src="Images/Image_4.png" alt="Image 4">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">
+                            This was my favourite shot during the film. The shadow looks so aesthetic against the golden light. 
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="Images/Image_5.png" alt="Image 5">
+                        <p class="text" style="text-align: center; margin-top: 30px; font-size: 1.25em;">
+                            Another beautiful picture of the sun on the highline against the gorgeous skyline of the Abu Dhabi city.
+                        </p>
                     </div>
                 </div>
 
@@ -125,12 +139,22 @@
         <!-- This is the contact me section of the website -->
         <div class="contactContainer">
             <h2 id="contactTitle" class="text">Contact Me</h2>
-            <a href="">Instagram</a>
-            <a href="">LinkedIn</a>
-            <a href="">Email</a>
+            <form id="contactForm">
+                <div class="formGroup">
+                    <label for="name" class="text">Your Name</label>
+                    <input type="text" id="nameID" name="name" class="text" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email" class="text">Email</label>
+                    <input type="email" id="email" name="email" class="text" required>
+                </div>
+                <div class="formGroup">
+                    <label for="message" class="text">Message</label>
+                    <textarea id="message" name="message" rows="4" class="text" required></textarea>
+                </div>
+                <button type="submit" id="sendButton" class="text">Send</button>
+            </form>
         </div>
-
-        <!-- <div style="height: 2000px;"></div> -->
     </div>
 
     <script src="script.js"></script>
