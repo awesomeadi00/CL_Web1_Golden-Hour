@@ -175,7 +175,7 @@ html {
 
 .aboutSection {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     max-width: 1200px;
@@ -324,4 +324,56 @@ html {
 
 #sendButton:hover {
     background-color: #C9961E;
+}
+
+/* When the screen width is 768px or less, so basically when the screen is half wide*/
+@media screen and (max-width: 790px) {
+    #name {
+        font-size: 1.2em;
+    }
+
+    .navLinks a {
+        font-size: 1em;
+        padding: 0px;
+    }
+
+    #mainTitle {
+        font-size: 4em;
+    }
+
+    #sun {
+        height: 50px;
+        width: 50px;
+    }
+
+    #watchFilmBtn {
+        padding: 7px 14px;
+        font-size: 0.5em;
+    }
+
+    .aboutDescription {
+        font-size: 0.2em;
+    }
+}
+
+/* When the screen width is 520px or less, so basically a fully crunched screen */
+@media screen and (max-width: 620px) {
+    #name {
+        font-size: 0.5em;
+    }
+
+    .navLinks a {
+        font-size: 0.4em;
+        padding: 0px;
+    }
+
+    #mainTitle {
+        font-size: 2em;
+    }
+
+    .aboutDescription {
+        font-size: 0.1em;
+    }
+
+
 }
